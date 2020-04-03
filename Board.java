@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.5
+ * @version 0.0.7
  */
 public class Board
 {
@@ -71,13 +71,14 @@ public class Board
     /**
      * @return the y of the visual board
      */
-    public int getVISUAL_BOARD_Y() {
+    public int getVisualBoardY() 
+    {
         return VISUAL_BOARD_Y;
     }
     /**
      * @return the x of the visual board
      */
-    public int getBOARD_X() 
+    public int getVisualBoardX() 
     {
         return VISUAL_BOARD_X;
     }
@@ -89,7 +90,9 @@ public class Board
      * 
      * @param y : the y of the block
      * @param x : the x of the block
-     * @param kind : the new kind of the block to set. < 1: player 1, white>, <-1: player 2, black>, < 0: empty> 
+     * @param kind : the new kind of the block to set. < 1: player 1, white>, 
+     *                                                 <-1: player 2, black>, 
+     *                                                 < 0: empty> 
      */
     public void setBoard(int y, int x, int kind)
     {
@@ -97,7 +100,7 @@ public class Board
         mainBoard[y][x] = kind;
 
     
-        char kindChar;
+        char kindChar = '\0';
         switch (kind)
         {
             case 1:
@@ -118,6 +121,57 @@ public class Board
         setVisualBoard(y, x, kindChar);
     }
 
+
+
+    public void rotate(int squerNumber, boolean way)
+    {
+        int x = 0, y = 0;
+        switch (squerNumber)
+        {
+            case 2:
+                x = 3;
+            break;
+
+            case 3:
+                y = 3;
+            break;
+
+            case 4:
+                y = x = 3;
+            break;
+        }
+
+
+        int hold =  mainBoard[y][x];
+
+        if (way)
+        {
+            setBoard(y, x, mainBoard[y+2][x]);
+            setBoard(y+2, x, mainBoard[y+2][x+2]);
+            setBoard(y+2, x+2, mainBoard[y][x+2]);
+            setBoard(y, x+2, hold);
+
+            hold = mainBoard[y+1][x];
+            setBoard(y+1, x, mainBoard[y+2][x+1]);
+            setBoard(y+2, x+1, mainBoard[y+1][x+2]);
+            setBoard(y+1, x+2, mainBoard[y][x+1]);
+            setBoard(y, x+1, hold);
+        }
+        else
+        {
+            setBoard(y, x, mainBoard[y][x+2]);
+            setBoard(y, x+2, mainBoard[y+2][x+2]);
+            setBoard(y+2, x+2, mainBoard[y+2][x]);
+            setBoard(y+2, x, hold);
+
+            hold = mainBoard[y+1][x];
+            setBoard(y+1, x, mainBoard[y][x+1]);
+            setBoard(y, x+1, mainBoard[y+1][x+2]);
+            setBoard(y+1, x+2, mainBoard[y+2][x+1]);
+            setBoard(y+2, x+1, hold);
+        }
+    }
+
     
     /**
      * Reset the board for new game 
@@ -135,15 +189,17 @@ public class Board
     {
         if (y > 2)
             y = (4 * y) + 3;
-        y = (4 * y) + 1;
+        else
+            y = (4 * y) + 1;
 
         if (x > 2) 
             x = (7 * x) + 5;
-        x = (7 * x) + 1;
+        else
+            x = (7 * x) + 1;
 
 
         for (int j = 0; j < 3; j++)
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
                 visualBoard[y+j][x+i] = kind;
     }
 
