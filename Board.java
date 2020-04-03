@@ -8,6 +8,8 @@
  */
 public class Board
 {
+            /* Feilds */
+
     // the dimensions of the game board 
     private final int BOARD_X = 6;
     private final int BOARD_Y = 6;
@@ -24,6 +26,87 @@ public class Board
 
 
 
+
+
+          /* Constructor */
+
+    /**
+     * Creat a new board
+     * (no args Constructor)
+     */
+    public Board()
+    {
+        // set up main board
+        mainBoard = new int[BOARD_Y][BOARD_X];
+        for (int j = 0; j < BOARD_Y; j++)
+            for (int i = 0; i < BOARD_X; i++)
+                mainBoard[j][j] = 0;
+
+
+        // set up visual board
+        visualBoard = new char[VISUAL_BOARD_Y][VISUAL_BOARD_X];
+        makeVisualBoard();
+    }
+
+
+
+
+
+            /* Methods */
+
+    /**
+     * Change the main board blocks kind.
+     * 
+     * @param y : the y of the block
+     * @param x : the x of the block
+     * @param kind : the new kind of the block to set. < 1: player 1, white>, <-1: player 2, black>, < 0: empty> 
+     */
+    public void setBoard(int y, int x, int kind)
+    {
+        // change main board
+        mainBoard[y][x] = kind;
+
+    
+        char kindChar;
+        switch (kind)
+        {
+            case 1:
+                kindChar = 'W';
+            break;
+
+            case -1:
+                kindChar = 'B';
+            break;
+
+            case 0:
+                kindChar = ' ';
+            break;
+        }
+
+
+        // change visual board
+        setVisualBoard(y, x, kindChar);
+    }
+
+
+    // change the visual board kind
+    private void setVisualBoard(int y, int x, char kind)
+    {
+        if (y > 2)
+            y = (4 * y) + 3;
+        y = (4 * y) + 1;
+
+        if (x > 2) 
+            x = (7 * x) + 5;
+        x = (7 * x) + 1;
+
+
+        for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 3; i++)
+                visualBoard[y+j][x+i] = kind;
+    }
+
+    
     // this method fill the visual board for first time
     private void makeVisualBoard()
     {
