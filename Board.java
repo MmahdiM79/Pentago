@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.3
+ * @version 0.0.5
  */
 public class Board
 {
@@ -57,6 +57,32 @@ public class Board
 
 
             /* Methods */
+
+
+    // * getter methods *
+
+    /**
+     * @return the visual board
+     */
+    public char[][] getVisualBoard() 
+    {
+        return visualBoard;
+    }
+    /**
+     * @return the y of the visual board
+     */
+    public int getVISUAL_BOARD_Y() {
+        return VISUAL_BOARD_Y;
+    }
+    /**
+     * @return the x of the visual board
+     */
+    public int getBOARD_X() 
+    {
+        return VISUAL_BOARD_X;
+    }
+
+
 
     /**
      * Change the main board blocks kind.
