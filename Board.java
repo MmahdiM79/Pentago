@@ -18,7 +18,11 @@ public class Board
     private final int VISUAL_BOARD_X = (6 * 7) + 5;
     private final int VISUAL_BOARD_Y = (6 * 4) + 3;
 
+
     // the main board of the game 
+    //  1 refers to player 1 (W: white)
+    // -1 refers to player 2 (B: black)
+    //  0 refers to empty block
     private int[][] mainBoard;
 
     // the visual board of the game
@@ -86,6 +90,17 @@ public class Board
 
         // change visual board
         setVisualBoard(y, x, kindChar);
+    }
+
+    
+    /**
+     * Reset the board for new game 
+     */
+    public void reset()
+    {
+        for (int j = 0; j < BOARD_Y; j++)
+            for (int i = 0; i < BOARD_X; i++)
+                setBoard(j, i, 0);
     }
 
 
