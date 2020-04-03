@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.0
+ * @version 0.0.1
  */
 public class Board
 {
@@ -106,7 +106,7 @@ public class Board
                 visualBoard[y+j][x+i] = kind;
     }
 
-    
+
     // this method fill the visual board for first time
     private void makeVisualBoard()
     {
