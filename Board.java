@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class Board
 {
