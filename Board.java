@@ -250,8 +250,22 @@ public class Board
                 else 
                     x = 0;
                     
+                
 
-                if (i == 22 || i == 23 || i == 24)
+
+                if (j == 12 && i == 21)
+                    visualBoard[j][i] = '1';
+                else if (j == 12 && i == 25)
+                    visualBoard[j][i] = '2';
+                else if (j== 14 && i == 21)
+                    visualBoard[j][i] = '3';
+                else if (j == 14 && i == 25)
+                    visualBoard[j][i] = '4';
+
+
+
+
+                else if (i == 22 || i == 23 || i == 24)
                     visualBoard[j][i] = ' ';
 
                 else if (j == 13)
