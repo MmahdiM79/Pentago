@@ -7,7 +7,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.0.2
  */
 public class Run 
 {
@@ -66,7 +66,7 @@ public class Run
                 Printer.inValidInputError(inputs);
             }
 
-            
+
             break;
         }
     }
