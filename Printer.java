@@ -6,7 +6,7 @@ import java.util.Scanner;
  * ( may not work on windows )
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.7
+ * @version 0.0.8
  */
 public class Printer 
 {
