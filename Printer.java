@@ -83,14 +83,30 @@ public class Printer
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println(indent + "\t      " + "🃏 <@••••••. Pentago Game .••••••@> 🀄️");
         System.out.print("\n\n");
-        System.out.println(indent + "\t      " + "       1. new Two Player game");
-        System.out.println(indent + "\t      " + "      2. new Single Player game");
+        System.out.println(indent + "\t      " + "        1. new Two Player game");
+        System.out.println(indent + "\t      " + "       2. new Single Player game");
         System.out.print("\n");
         System.out.println(indent + "\t      " + "               3. exit");
         System.err.println(indent + "\t      " + "🀄️ <@••••••••••••••••••••••••••••@> 🃏");
         System.out.print("\n\n");
         System.out.print(  indent + "\t      " + "                 0_0? ");
-    }                
+    }  
+    
+
+    /**
+     * This method ask the player name
+     * 
+     * @param playerID : the player number
+     */
+    public static void getPlayerName(int playerID)
+    {
+        clear();
+
+        System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.print(indent + "\t  " + 
+                    "Please type the name of the player" + playerID +":  ");
+    }
+
 
     /**
      * This method print the visual board in standard output(termianl)
@@ -100,9 +116,14 @@ public class Printer
      * @param y_len : the width of the visual board
      * @param x_len : the lenght of the visual board
      */
-    public static void printVisualBoard(char[][] visualBoard, int y_len, int x_len)
+    public static void printVisualBoard(Board gameBoard)
     {
         clear();
+
+
+        char[][] visualBoard = gameBoard.getVisualBoard();
+        int y_len = gameBoard.getVisualBoardY();
+        int x_len = gameBoard.getVisualBoardX();
 
 
         System.out.print(indent + RESET);
@@ -145,7 +166,10 @@ public class Printer
             {
                 if (visualBoard[j][i] == '•' || visualBoard[j][i] == '-' || visualBoard[j][i] == '|')
                     System.out.print(YELLOW_BRIGHT + RED_BACKGROUND + visualBoard[j][i]);
- 
+                
+                else if (visualBoard[j][i] > '0' && visualBoard[j][i] < '5')
+                    System.err.print(GREEN_BRIGHT + BLUE_BACKGROUND + visualBoard[j][i]);
+
                 else if (visualBoard[j][i] == 'B')
                     System.out.print(BLACK_BACKGROUND + " ");
 
