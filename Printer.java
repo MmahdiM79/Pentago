@@ -6,7 +6,7 @@ import java.util.Scanner;
  * ( may not work on windows )
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.6
+ * @version 0.0.7
  */
 public class Printer 
 {
@@ -65,13 +65,6 @@ public class Printer
 
 
 
-    // IIB
-   {
-       System.out.println(RESET);
-   }
-
-
-
 
 
 
@@ -88,15 +81,15 @@ public class Printer
         System.out.println(RESET);
 
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println(indent + "\t\t  " + "🃏 <@••••••. Pentago Game .••••••@> 🀄️");
+        System.out.println(indent + "\t      " + "🃏 <@••••••. Pentago Game .••••••@> 🀄️");
         System.out.print("\n\n");
-        System.out.println(indent + "\t\t  " + "       1. new Two Player game");
-        System.out.println(indent + "\t\t  " + "      2. new Single Player game");
+        System.out.println(indent + "\t      " + "       1. new Two Player game");
+        System.out.println(indent + "\t      " + "      2. new Single Player game");
         System.out.print("\n");
-        System.out.println(indent + "\t\t  " + "               3. exit");
-        System.err.println(indent + "\t\t  " + "🀄️ <@••••••••••••••••••••••••••••@> 🃏");
+        System.out.println(indent + "\t      " + "               3. exit");
+        System.err.println(indent + "\t      " + "🀄️ <@••••••••••••••••••••••••••••@> 🃏");
         System.out.print("\n\n");
-        System.out.print(  indent + "\t\t  " + "                 0_0? ");
+        System.out.print(  indent + "\t      " + "                 0_0? ");
     }                
 
     /**
@@ -215,6 +208,18 @@ public class Printer
 
         System.out.println("<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>");
         finishEnter(finish);
+    }
+
+
+    /**
+     * This method reset the color of the terminal
+     * Both text color and background color
+     * 
+     * ()
+     */
+    public static void colorReset()
+    {
+        System.out.println(RESET);
     }
 
 
