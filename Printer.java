@@ -64,6 +64,7 @@ public class Printer
 
 
 
+
     // IIB
    {
        System.out.println(RESET);
@@ -71,9 +72,33 @@ public class Printer
 
 
 
+
+
+
                     /* Methods */
 
-        
+
+      
+    /**
+     * This method print the game menu
+     */
+    public static void printMenu()
+    {
+        clear();
+        System.out.println(RESET);
+
+        System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println(indent + "\t\t  " + "🃏 <@••••••. Pentago Game .••••••@> 🀄️");
+        System.out.print("\n\n");
+        System.out.println(indent + "\t\t  " + "       1. new Two Player game");
+        System.out.println(indent + "\t\t  " + "      2. new Single Player game");
+        System.out.print("\n");
+        System.out.println(indent + "\t\t  " + "               3. exit");
+        System.err.println(indent + "\t\t  " + "🀄️ <@••••••••••••••••••••••••••••@> 🃏");
+        System.out.print("\n\n");
+        System.out.print(  indent + "\t\t  " + "                 0_0? ");
+    }                
+
     /**
      * This method print the visual board in standard output(termianl)
      * Run this code in an Unix-base OS to see it colorfull =)
