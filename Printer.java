@@ -6,7 +6,7 @@ import java.util.Scanner;
  * ( may not work on windows )
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.2
+ * @version 0.0.5
  */
 public class Printer 
 {
@@ -64,7 +64,10 @@ public class Printer
 
 
 
-
+    // IIB
+   {
+       System.out.println(RESET);
+   }
 
 
 
@@ -143,6 +146,36 @@ public class Printer
 
 
     /**
+     * This method print the player name and some other words to get player choosen block
+     * 
+     * @param player : the player that should choose a block
+     */
+    public static void printTurn(Player player)
+    {
+        System.out.print(RESET + 
+                    "  Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
+                            " it's your turn. choose a block from white blocks(example: '3D'): ");
+    }
+
+
+    /**
+     * This method says congratulations to winner player =)
+     * 
+     * @param winnePlayer : the winner player
+     * @param finish : the input source
+     */
+    public static void printWinner(Player winnePlayer, Scanner finish)
+    {
+        System.out.println(indent + "\t         " +
+                            "Congratulations " + 
+                                BLACK_BACKGROUND_BRIGHT + winnePlayer.getFirstName() + RESET +
+                                    ". you win !");
+
+        finishEnter(finish);
+    }
+
+
+    /**
      * This mehtod calibrate the font size of the terminal
      * 
      * @param finish : the players input source
@@ -160,7 +193,33 @@ public class Printer
     }
 
 
+    /**
+     * This method warn the player that his/her choosen block is in valid
+     * 
+     * @param finish : the player input source
+     */
+    public static void wrongChooseError(Scanner finish)
+    {
+        System.out.println(indent + "\t     " + 
+                                YELLOW_BACKGROUND_BRIGHT + RED_BRIGHT + 
+                                        "<@ ! YOU CAN NOT CHOOSE THAT BLOCK ! @>" + RESET);
 
+        finishEnter(finish);
+    }
+
+
+    /**
+     * This method warn the player that his/her input is in valid
+     * 
+     * @param finish : the player input source
+     */
+    public static void inValidInputError(Scanner finish)
+    {
+        System.out.println(indent + "\t         " + 
+                                YELLOW_BACKGROUND_BRIGHT + RED_BRIGHT +
+                                            "<@ ! YOUR INPUT IS INVALID ! @>" + RESET);
+        finishEnter(finish);
+    }
 
 
 
