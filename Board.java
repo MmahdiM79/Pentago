@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.7
+ * @version 0.0.8
  */
 public class Board
 {
@@ -81,6 +81,21 @@ public class Board
     public int getVisualBoardX() 
     {
         return VISUAL_BOARD_X;
+    }
+
+    /**
+     * get the kind of a block of board
+     * 
+     * @param y : the y of the block
+     * @param x : the x of the block
+     * 
+     * @return the kind of the choosen block. < 1: player 1, white>,
+     *                                        <-1: player 2, black>,
+     *                                        < 0: empty>
+     */
+    public int getMainBoardBlockKind(int y, int x)
+    {
+        return mainBoard[y][x];
     }
 
 
