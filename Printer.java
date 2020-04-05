@@ -6,7 +6,7 @@ import java.util.Scanner;
  * ( may not work on windows )
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.8
+ * @version 0.0.10
  */
 public class Printer 
 {
@@ -192,11 +192,24 @@ public class Printer
      * 
      * @param player : the player that should choose a block
      */
-    public static void printTurn(Player player)
+    public static void printTurn1(Player player)
     {
         System.out.print(RESET + 
                     "  Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
                             " it's your turn. choose a block from white blocks(example: '3D'): ");
+    }
+
+
+    /**
+     * This method print the player name and some other words to get player choosen square to rotate
+     * 
+     * @param player : the player that should choose a square to rotate
+     */
+    public static void printTurn2(Player player)
+    {
+        System.out.print(RESET + 
+                    "  Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
+                            " it's your turn. choose a square to rotate(example: '1t', '2f'. t: clockwise, f: counterClockwise): ");
     }
 
 
