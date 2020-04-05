@@ -231,6 +231,22 @@ public class Printer
 
 
     /**
+     * Call this method when game drawed
+     * 
+     * @param finish : the input source
+     */
+    public static void printDraw(Scanner finish)
+    {
+        System.out.println(indent + "\t         " +
+                            "Congratulations " + 
+                                BLACK_BACKGROUND_BRIGHT + "both of you" + RESET +
+                                    " are win !");
+
+        finishEnter(finish);
+    }
+
+
+    /**
      * This mehtod calibrate the font size of the terminal
      * 
      * @param finish : the players input source
