@@ -2,10 +2,12 @@
 
 /**
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.3
+ * @version 0.0.5
  */
 public class Rules
 {
+    // this variable hold the winner of the game
+    private static Player winner = null;
 
 
     /**
@@ -25,6 +27,21 @@ public class Rules
 
     //  else
         return false;
+    }
+
+
+    /**
+     * This method check that the game is ended or not
+     * 
+     * @return {@code ture} if the game was ended
+     */
+    public static boolean isGameEnded()
+    {
+        if (winner == null)
+            return false;
+
+    //  else
+        return true;
     }
 
 
@@ -53,6 +70,8 @@ public class Rules
      */
     public static boolean isWinner(Board gameBoard, Player player)
     {
+        winner = player;
+
         if (checkSequenceHorizontal(gameBoard, 0, player.getPlayerID()))
             return true;
         if (checkSequenceHorizontal(gameBoard, 1, player.getPlayerID()))
@@ -70,6 +89,7 @@ public class Rules
         if (checkSequenceDiagonal(gameBoard, false, player.getPlayerID()))
             return true;
 
+        winner = null;
         return false;
     }
 
