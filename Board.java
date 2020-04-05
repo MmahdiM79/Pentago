@@ -4,7 +4,7 @@
  * This class repersent a simple Pentago game's board
  * 
  * @author Mohammad Mahdi Malmsi
- * @version 0.0.9 
+ * @version 0.0.10 
  */
 public class Board
 {
@@ -97,20 +97,20 @@ public class Board
         return BOARD_X;
     }
     /**
-     * @return the number of the free blocks of the board
+     * @return the number of the empty blocks of the board
      */
-    public int getNumberOfFreeBlocks()
+    public int getNumberOfEmptyBlocks()
     {
-        int numberOfFreeBlocks = 0
+        int numberOfEmptyBlocks = 0
         for (int j = 0; j < BOARD_Y; j++)
             for (int i = 0; i < BOARD_X; i++)
                 if (mainBoard[j][i] == 0)
-                    numberOfFreeBlocks++;
+                    numberOfEmptyBlocks++;
 
-        return numberOfFreeBlocks;
+        return numberOfEmptyBlocks;
     }
 
-    
+
 
     /**
      * Get the kind of a block of board
