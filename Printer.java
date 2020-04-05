@@ -208,7 +208,7 @@ public class Printer
     public static void printTurn2(Player player)
     {
         System.out.print(RESET + 
-                    "  Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
+                    "Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
                             " it's your turn. choose a square to rotate(example: '1t', '2f'. t: clockwise, f: counterClockwise): ");
     }
 
