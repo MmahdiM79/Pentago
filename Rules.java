@@ -1,8 +1,8 @@
-
+import java.util.Scanner;
 
 /**
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @version 0.0.6
  */
 public class Rules
 {
@@ -70,6 +70,7 @@ public class Rules
      */
     public static boolean isWinner(Board gameBoard, Player player)
     {
+        Player holdLastWinner = winner;
         winner = player;
 
         if (checkSequenceHorizontal(gameBoard, 0, player.getPlayerID()))
@@ -89,9 +90,18 @@ public class Rules
         if (checkSequenceDiagonal(gameBoard, false, player.getPlayerID()))
             return true;
 
-        winner = null;
+        winner = holdLastWinner;
         return false;
     }
+
+
+    public static void WINNER(Board gameBoard, Player player1, Player player2, Scanner finish)
+    {
+        if (isWinner(gameBoard, player1) && isWinner(gameBoard, player2))
+            Printer.printDraw(finish);
+        else   
+            Printer.printWinner(winner, finish);
+    } 
 
 
     // this method search for a sequence lenght of 5 in lines
