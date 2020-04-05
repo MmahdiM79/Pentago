@@ -7,7 +7,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.1
  */
 public class Run 
 {
@@ -68,6 +68,11 @@ public class Run
     // this method is for play the player turn
     private static void playTurn(Board gameBoard, Player player, String holdInputs)
     {     
+        // check that the board has empty blocks or not
+        if (gameBoard.getNumberOfEmptyBlocks() == 0)
+            return;
+
+
         int x, y; // the coordinates of player choosen block 
         boolean rotate; // true: clock wise,  false: counter clock wise
 
@@ -211,6 +216,12 @@ public class Run
                         // player 2 turn
                         playTurn(gameBoard, player2, holdInputs);
                     }
+
+                    // show the last state of the board
+                    Printer.printVisualBoard(gameBoard);
+                    // show the winner
+                    Rules.WINNER(gameBoard, player1, player2, inputs);
+
                 break;
 
                 case 2:
@@ -219,6 +230,9 @@ public class Run
                 case 3:
                     return;
             }
+
+            // reset the board for new game
+            gameBoard.reset();
         }
     }
 }
