@@ -195,7 +195,7 @@ public class Printer
     public static void printTurn1(Player player)
     {
         System.out.print(RESET + 
-                    "  Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
+                    "Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
                             " it's your turn. choose a block from white blocks(example: '3D'): ");
     }
 
@@ -209,7 +209,7 @@ public class Printer
     {
         System.out.print(RESET + 
                     "Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
-                            " it's your turn. choose a square to rotate(example: '1t', '2f'. t: clockwise, f: counterClockwise): ");
+                            " it's your turn. choose a square to rotate\n(example: '1t', '2f'. t: clockwise, f: counterClockwise): ");
     }
 
 
