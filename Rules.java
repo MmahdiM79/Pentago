@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.6
+ * @version 0.0.7
  */
 public class Rules
 {
@@ -95,6 +95,14 @@ public class Rules
     }
 
 
+    /**
+     * This method find the winner of the game
+     * 
+     * @param gameBoard : the board of the game
+     * @param player1 : player one
+     * @param player2 : player two
+     * @param finish : inputs source
+     */
     public static void WINNER(Board gameBoard, Player player1, Player player2, Scanner finish)
     {
         if (isWinner(gameBoard, player1) && isWinner(gameBoard, player2))
@@ -102,6 +110,15 @@ public class Rules
         else   
             Printer.printWinner(winner, finish);
     } 
+
+
+    /**
+     * This method reset the winner player for new game
+     */
+    public void reset()
+    {
+        winner = null;
+    }
 
 
     // this method search for a sequence lenght of 5 in lines
