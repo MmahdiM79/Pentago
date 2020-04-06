@@ -115,7 +115,7 @@ public class Rules
     /**
      * This method reset the winner player for new game
      */
-    public void reset()
+    public static void reset()
     {
         winner = null;
     }
