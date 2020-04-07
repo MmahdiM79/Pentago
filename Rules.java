@@ -2,13 +2,29 @@ import java.util.Scanner;
 
 /**
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.7
+ * @version 0.0.8
  */
 public class Rules
 {
     // this variable hold the winner of the game
     private static Player winner = null;
 
+
+    /**
+     * Set the winner of the game
+     * @param winner : the winner to set
+     */
+    public static void setWinner(Player winner) 
+    {
+        Rules.winner = winner;
+    }
+    /**
+     * @return the winner
+     */
+    public static Player getWinner() 
+    {
+        return winner;
+    }
 
     /**
      * This method check the player choosen block
