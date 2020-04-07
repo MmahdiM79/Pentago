@@ -5,7 +5,7 @@ import java.util.HashMap;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @version 0.1.0
  */
 public class Bot extends Player
 {
@@ -82,6 +82,27 @@ public class Bot extends Player
         if (Rules.isWinner(gameBoard, this))
             return;
 
+        
+        // rank the squares rotate
+        rankSqueresRotate(gameBoard);
+
+        String botRotateChoose = null;
+        for (String rotate: squeresRotateRank.keySet())
+        {
+            if (botRotateChoose == null)
+            {
+                botRotateChoose = rotate;
+                continue;
+            }
+
+            if (squeresRotateRank.get(rotate) >= squeresRotateRank.get(botRotateChoose))
+                botRotateChoose = rotate;
+        }
+
+        int squareNumber = (int)botRotateChoose.charAt(0) - 48;
+        boolean rotateWise = botRotateChoose.charAt(1) == 't' ? true: false;
+
+        gameBoard.rotate(squareNumber, rotateWise);
     }
 
 
@@ -127,6 +148,8 @@ public class Bot extends Player
 
             gameBoard.rotate(n, true);
         }
+        
+        Rules.setWinner(null);
     }
 
 
@@ -136,7 +159,7 @@ public class Bot extends Player
         // reset the empty blocks rank
         for (String block: emptyBlocksRank.keySet())
         {
-            emptyBlocksRank.replace(block, -3000);
+            emptyBlocksRank.replace(block, -3000.0f);
         }
 
         // reset the squers rank
