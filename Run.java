@@ -7,7 +7,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.1
+ * @version 0.2.0 
  */
 public class Run 
 {
@@ -89,7 +89,7 @@ public class Run
 
 
             // check the player input
-            if (holdInputs.length() > 2 || holdInputs.length() == 0 ||  !isValid(holdInputs, 'b'))
+            if (holdInputs.length() > 2 || holdInputs.length() < 2 ||  !isValid(holdInputs, 'b'))
             {
                 Printer.inValidInputError(inputs);
                 continue;
@@ -118,7 +118,7 @@ public class Run
 
             
             // check the player input
-            if (holdInputs.length() > 3 || holdInputs.length() == 0 || !isValid(holdInputs, 's'))
+            if (holdInputs.length() > 2 || holdInputs.length() < 2 || !isValid(holdInputs, 's'))
             {
                 Printer.inValidInputError(inputs);
                 continue;
