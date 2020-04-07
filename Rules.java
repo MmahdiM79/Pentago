@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.8
+ * @version 0.1.0
  */
 public class Rules
 {
@@ -26,6 +26,8 @@ public class Rules
         return winner;
     }
 
+
+    
     /**
      * This method check the player choosen block
      * 
