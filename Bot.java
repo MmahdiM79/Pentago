@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+
+
 /**
  * This class is a simple bot that play insted player 2
  * 
@@ -25,6 +27,9 @@ public class Bot extends Player
 
 
 
+
+
+
             /* Constructor */
 
     /**
@@ -42,6 +47,12 @@ public class Bot extends Player
     }
 
 
+
+
+
+
+
+            /*  Methods  */
 
     /**
      * This method is a kind of main method for bot
@@ -198,6 +209,7 @@ public class Bot extends Player
         return cntr;
     }
 
+    
     // thie method converts the i,j to string
     // example: (3, 4) >>> "5D"
     private String makeCode(int y, int x)

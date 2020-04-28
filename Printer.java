@@ -1,9 +1,13 @@
 import java.util.Scanner;
 
+
+
+
 /**
  * This class do all required prints
  * This class designed for UNIX bash
  * ( may not work on windows )
+ * 
  * 
  * @author Mohammad Mahdi Malmasi
  * @version 0.0.10
@@ -305,6 +309,8 @@ public class Printer
     }
 
 
+
+    
 
 
     // this method wait until player push 'enter' bottom

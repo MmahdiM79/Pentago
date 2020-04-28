@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
+
+
 /**
+ * This class is Monitoring on the enforcement of game rules
+ * 
  * @author Mohammad Mahdi Malmasi
  * @version 0.1.0
  */
@@ -10,6 +14,15 @@ public class Rules
     private static Player winner = null;
 
 
+
+
+
+
+
+
+            /*  Mehtods  */
+
+            
     /**
      * Set the winner of the game
      * @param winner : the winner to set

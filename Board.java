@@ -1,7 +1,9 @@
 
 
+
+
 /**
- * This class repersent a simple Pentago game's board
+ * This class repersent a simple Pentago game board
  * 
  * @author Mohammad Mahdi Malmsi
  * @version 0.1.0 
@@ -156,6 +158,7 @@ public class Board
             break;
 
             case 0:
+            default:
                 kindChar = ' ';
             break;
         }
@@ -166,7 +169,12 @@ public class Board
     }
 
 
-
+    /**
+     * This method rotate the board squers
+     * 
+     * @param squerNumber : number of the squer that you want to rotate it
+     * @param way : {@code true}: clockwise, {@code false}: counterClockwise
+     */
     public void rotate(int squerNumber, boolean way)
     {
         int x = 0, y = 0;
@@ -226,6 +234,11 @@ public class Board
             for (int i = 0; i < BOARD_X; i++)
                 setBoard(j, i, 0);
     }
+
+
+
+
+
 
 
     // change the visual board kind

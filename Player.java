@@ -10,6 +10,8 @@
  * 
  * @author Mohammad Mahdi Malmasi
  * @version 0.1.0
+ * 
+ * @see Person
  */
 public class Player extends Person
 {
@@ -32,6 +34,16 @@ public class Player extends Person
 
           /* Constructor */
 
+    /**
+     * Creat a new Player with given details
+     * 
+     * @param firstName : the first name of the player
+     * @param lastName : the last name of the player
+     * @param age : the age of the player
+     * @param playerID : player ID
+     * @param playerCharacter : the character of the player in game
+     * @param gender : the gender of the player
+     */
     public Player(String firstName, String lastName, int age, int playerID, char playerCharacter, String gender)
     {
         super(firstName, lastName, age, gender);
