@@ -78,7 +78,7 @@ public class Run
         boolean rotate; // true: clock wise,  false: counter clock wise
 
 
-        // while player one get invalid input for his/her choosen block
+        // while player get valid input for his/her choosen block
         while(true)
         {
             // show the map to the player
@@ -95,6 +95,12 @@ public class Run
                 Printer.inValidInputError(inputs);
                 continue;
             }
+            
+            if (!isPlayerSelectValid(gameBoard, y, x))
+            {
+                Printer.wrongChooseError(inputs);
+                continue;
+            }
 
             // apply player choose
             y = deCode(holdInputs, 'Y');
@@ -103,7 +109,7 @@ public class Run
             break;
         }
 
-        // check the player one is winner or not
+        // check the player is winner or not
         if (Rules.isWinner(gameBoard, player))
             return;
 
