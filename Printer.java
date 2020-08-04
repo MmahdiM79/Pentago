@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.10
+ * @version 0.1.0
  */
 public class Printer 
 {
@@ -200,7 +200,7 @@ public class Printer
     {
         System.out.print(RESET + 
                     "Hey " + BLACK_BACKGROUND_BRIGHT +  player.getFirstName() + RESET + 
-                            " it's your turn. choose a block from white blocks(example: '3D'): ");
+                            " it's your turn. choose a block from empty blocks(example: '3D'): ");
     }
 
 
