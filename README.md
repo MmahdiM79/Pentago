@@ -50,3 +50,12 @@ So pull requests are welcome for this parts or other changes that make it better
 
 
 
+## some photos of project
+
+
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/1.png)
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/2.png)
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/3.png)
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/4.png)
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/5.png)
+![github-octocat](https://github.com/MmahdiM79/Pentago/blob/master/photos/6.png)
