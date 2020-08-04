@@ -8,7 +8,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.1 
+ * @version 0.2.2 
  */
 public class Run 
 {
@@ -74,7 +74,7 @@ public class Run
             return;
 
 
-        int x, y; // the coordinates of player choosen block 
+        int x = 0, y = 0; // the coordinates of player choosen block 
         boolean rotate; // true: clock wise,  false: counter clock wise
 
 
