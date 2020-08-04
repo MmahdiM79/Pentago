@@ -8,7 +8,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.2 
+ * @version 0.2.5 
  */
 public class Run 
 {
@@ -96,6 +96,11 @@ public class Run
                 continue;
             }
             
+            // decode player choose
+            y = deCode(holdInputs, 'Y');
+            x = deCode(holdInputs, 'X');
+
+            // check player choose
             if (!Rules.isPlayerSelectValid(gameBoard, y, x))
             {
                 Printer.wrongChooseError(inputs);
@@ -103,8 +108,6 @@ public class Run
             }
 
             // apply player choose
-            y = deCode(holdInputs, 'Y');
-            x = deCode(holdInputs, 'X');
             Rules.applyPlayerSelect(gameBoard, y, x, player);
             break;
         }
