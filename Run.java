@@ -8,7 +8,7 @@ import java.util.Scanner;
  * (may not work on windows)
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.0 
+ * @version 0.2.1 
  */
 public class Run 
 {
@@ -96,7 +96,7 @@ public class Run
                 continue;
             }
             
-            if (!isPlayerSelectValid(gameBoard, y, x))
+            if (!Rules.isPlayerSelectValid(gameBoard, y, x))
             {
                 Printer.wrongChooseError(inputs);
                 continue;
